@@ -1,23 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { ShieldView } from './components/Shield';
+import { colors } from './components/Color';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+            Shields, a 
+            <a
+                className="App-link"
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <code> React </code>
+            </a> 
+            component to build ans display shields.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p style={{width: '300px', height: '400px'}}>
+            <ShieldView color={colors.or} />
+        </p>
       </header>
     </div>
   );
