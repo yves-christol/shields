@@ -1,10 +1,6 @@
-export type Color = {
-    metal: boolean,
-    brightness: 'low' | 'medium' | 'high',
-    code: string,
-}
+import type { Color } from '../types'
 
-export const colors: Record<string, Color> = {
+const colors: Record<string, Color> = {
     'sable': { code: '#000000', metal: false, brightness: 'low' },
     'argent': { code: '#ffffff', metal: true, brightness: 'high' },
     'or': { code: '#ffee00', metal: true, brightness: 'high' },
@@ -19,4 +15,16 @@ export const colors: Record<string, Color> = {
     'sky': { code: '#99bbff', metal: false, brightness: 'high' },
     'pine': { code: '#355520', metal: false, brightness: 'low' },
     'wine': { code: '#902020', metal: false, brightness: 'low' },
+}
+
+export const code = (name: string): string => {
+    return colors[name] ? colors[name].code : '#666'
+}
+
+export const metal = (name: string): boolean => {
+    return colors[name].metal
+}
+
+export const brightness = (name: string): 'low' | 'medium' | 'high' => {
+    return colors[name] ? colors[name].brightness : 'medium'
 }

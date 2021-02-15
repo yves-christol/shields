@@ -1,7 +1,16 @@
 import React from 'react';
+import type { Shield }from './components/Shield/types'
 import { ShieldView } from './components/Shield';
-import { colors } from './components/Color';
 import './App.css';
+
+const logo: Shield = {
+    owner: 'yves.christol@gmail.com',
+    color: 'orange',
+    partition: { name: 'parti', color: 'sable' },
+    meubles: [
+        { name: 'morningstar', color: 'argent', stroke: 'argent', position: 'r1' }
+    ]
+}
 
 function App() {
   return (
@@ -20,7 +29,7 @@ function App() {
             component to build ans display shields.
         </p>
         <p style={{width: '300px', height: '400px'}}>
-            <ShieldView color={colors.or} />
+            <ShieldView shield={logo} shine={true} />
         </p>
       </header>
     </div>
