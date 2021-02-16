@@ -29,14 +29,13 @@ export type Meuble = {
 
 export type Shield = {
     owner: string,
-    devise?: string,
     color: string,
-    partition?: Partition,
-    piece?: Piece,
+    partition: Partition,
+    piece: Piece,
     meubles: Meuble[]
 }
 
-export type ShieldProps = {
+export type ShieldViewProps = {
     shield: Shield,
     shine?: boolean,
     glow?: boolean,

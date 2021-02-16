@@ -1,5 +1,5 @@
 import React from 'react'
-import type { ShieldProps } from './types'
+import type { ShieldViewProps } from './types'
 import * as color from './color'
 import * as partition from './partition'
 import * as piece from './piece'
@@ -8,7 +8,7 @@ import * as position from './position'
 
 const shieldPath = 'M 0,0 m -12,-12 h24 v12 C 12,10 0,15 0,15 C 0,15, -12,10 -12,0 z'
 
-export const ShieldView = ( props: ShieldProps) => (
+export const ShieldView = ( { shield, shine }: ShieldViewProps) => (
     <svg viewBox="-13 -13 26 29">
         <defs>
             <radialGradient id="grad" gradientUnits="userSpaceOnUse" cx="-4" cy="-4" r="20">
@@ -18,24 +18,22 @@ export const ShieldView = ( props: ShieldProps) => (
                 <stop stopColor='#000' stopOpacity='0.12' offset='100%'/>
             </radialGradient>
         </defs>
-        <path d={shieldPath} style={{fill: color.code(props.shield.color), strokeWidth: '0'}} />
-        { props.shield.partition ? 
-            <path d={partition.path(props.shield.partition.name)}  style={{fill: color.code(props.shield.partition.color)}} /> : ''
+        <path d={shieldPath} style={{fill: color.code(shield.color), strokeWidth: '0'}} />
+        { shield.partition ? 
+            <path d={partition.path(shield.partition.name)}  style={{fill: color.code(shield.partition.color)}} /> : ''
         }
-        { props.shield.piece ? 
-            <path d={piece.path(props.shield.piece.name)}  style={{fill: color.code(props.shield.piece.color)}} /> : ''
+        { shield.piece ? 
+            <path d={piece.path(shield.piece.name)}  style={{fill: color.code(shield.piece.color)}} /> : ''
         }
-        { props.shield.meubles ? props.shield.meubles.map( m =>
+        { shield.meubles ? shield.meubles.map( m =>
             <path key={m.position} d={meuble.path(m.name)}
                 style={{fill: color.code(m.color), stroke: color.code(m.stroke), strokeWidth: '0.3'}}
                 transform={position.transform(m.position)}
             />) : ''
         }
-        { props.shine ?
-            < path d={shieldPath}
-                style={{fill: 'url(#grad)', stroke: '#000', strokeWidth: '0.3'}}
-            /> : ''
-        }
+        < path d={shieldPath}
+            style={{fill: shine ? 'url(#grad)' : 'transparent', stroke: '#000', strokeWidth: '0.3'}}
+        /> 
     </svg>    
 )
 

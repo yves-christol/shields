@@ -1,6 +1,6 @@
 import type { Color } from '../types'
 
-const colors: Record<string, Color> = {
+export const colors: Record<string, Color> = {
     'sable': { code: '#000000', metal: false, brightness: 'low' },
     'argent': { code: '#ffffff', metal: true, brightness: 'high' },
     'or': { code: '#ffee00', metal: true, brightness: 'high' },

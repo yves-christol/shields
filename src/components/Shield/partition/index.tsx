@@ -1,6 +1,6 @@
 export const partitions: Record<string, { path: string }> = {
     'none': { path: ''} ,
-    'medaille': { path: 'M 0,12 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0 z'} ,
+    'medaille': { path: 'M -10,0 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0 z'} ,
     'parti': { path: 'M 0,-12 h12 v12 C 12,10 0,15 0,15 z'} ,
     'partizigzag': { path: 'M 0,-12 h12 v12 C 12,10 0,15 0,15 l -3,-2 l 6,-2 l -6,-2 l 6,-2 l -6, -2 l 6,-2 l -6,-2 l 6,-2 l -6,-2 l 6,-2 l -6,-2 l 6,-2 l -6,-2 z'} ,
     'partieclair': { path: 'M 0,-12 h12 v12 C 12,10 0,15 0,15 l 3,-16 l -6,4 z'} ,

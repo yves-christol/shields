@@ -1,0 +1,10 @@
+.pickerItem,
+.pickerItemSelected {
+  display: inline-block;
+  width: 50px;
+  height: 55px;
+  background: transparent;
+}
+.pickerItemSelected {
+  border: 2px solid #f00;
+}
